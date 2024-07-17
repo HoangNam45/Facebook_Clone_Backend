@@ -1,11 +1,14 @@
-// config/dbConfig.js
+const sql = require('mssql/msnodesqlv8');
 const config = {
-    server: 'DESKTOP-TMPNLFQ\\NAM', // Địa chỉ hoặc tên máy chủ SQL Server
-    database: 'FB', // Tên cơ sở dữ liệu
+    server: '21AK22-COM\\DAYLASQL',
+    database: 'FB',
     driver: 'msnodesqlv8',
     options: {
-        trustedConnection: true, // Sử dụng Windows Authentication
+        trustedConnection: true,
     },
 };
-
-module.exports = config;
+sql.connect(config, (err) => {
+    if (err) console.log(err);
+    else console.log('Connected to SQL Server');
+});
+module.exports = sql;

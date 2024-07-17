@@ -1,6 +1,5 @@
-// db/database.js
-const sql = require('mssql');
-const config = require('../config/db');
+const sql = require('mssql/msnodesqlv8');
+const config = require('../config/db/index');
 
 async function connectToDatabase() {
     try {
